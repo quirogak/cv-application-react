@@ -1,11 +1,11 @@
 footer {
-    background-color: rgb(135, 198, 240);
+    background-color: rgb(192, 192, 192);
     display: flex;
     justify-content: center;
 }
 
 a {
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: 'Courgette', cursive;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 0.9rm;
@@ -13,10 +13,10 @@ a {
 }
 
 a:visited {
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
 a:hover {
-    color: rgb(53, 53, 53);
+    color: rgb(255, 255, 255);
 }
