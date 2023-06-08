@@ -1,0 +1,22 @@
+footer {
+    background-color: rgb(135, 198, 240);
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    color: black;
+    font-family: 'Courgette', cursive;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.9rm;
+    margin: 3px;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(53, 53, 53);
+}
