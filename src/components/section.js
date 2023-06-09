@@ -1,15 +1,11 @@
 import { Component } from "react";
 import "../styles/section.css"
+import List from "./list";
 
 class Section extends Component {
     constructor(props) {
         super(props)
         this.getContent = this.getContent.bind(this)
-        this.renderList = this.renderList.bind(this)
-    }
-
-    renderList(listArr) {
-        return (<ul>{listArr.map(el => <li>{el}</li>)}</ul>)
     }
 
     getContent() {
@@ -17,7 +13,7 @@ class Section extends Component {
         if (content) {
             const currentValue = content.value
             if (typeof (currentValue) === "object") // when the current value is a list.
-                return this.renderList(currentValue)
+                return <List content={currentValue}></List>
             return currentValue
         }
         else return
