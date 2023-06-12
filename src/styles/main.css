@@ -39,6 +39,12 @@ main {
 
 #page-header>section>* {
     font-size: 1.5rem;
+    height: min-content;
+    text-align: center;
+}
+
+#page-header>section>.content {
+    font-size: 1.1rem;
 }
 
 #page-header>section>.title>hr {
