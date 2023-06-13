@@ -21,7 +21,7 @@ class Section extends Component {
 
     render() {
         return (
-            <section>
+            <section className={(this.props.title).toLowerCase()}>
                 <div className="title">{this.props.title} <hr></hr></div>
                 <div className="content">{this.getContent()}</div>
             </section>
