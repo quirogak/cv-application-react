@@ -12,11 +12,13 @@ const contactList = [
 
 const softSkills = {
     title: "Soft Skills",
-    content: ["Leadership",
+    content: [
+        "Leadership",
         "Communication",
         "Active listening",
         "Flexibility",
-        "Verbal skills"]
+        "Verbal skills"
+    ]
 }
 
 
@@ -31,9 +33,23 @@ const technicalSkills = {
     ]
 }
 
-const educationText = []
+const educationText = [
+    "B.S. Computer Science",
+    "Massachusetts Institute of Technology",
+    "Cambridge, MA",
+    "2018 - 2023",
+    "GPA: 3.97 / 5.00 cumulative",
+]
 
-const practicalText = []
+
+const practicalText = [
+    "Software Engineer",
+    "Google",
+    "Cambridge 355 Main Street",
+    "20XX - Today",
+    "Description about your responsabilities on this job",
+    "Additional Comment"
+]
 
 class Main extends Component {
     constructor(props) {
@@ -53,8 +69,8 @@ class Main extends Component {
                         </div>
                         <div id="right-side">
                             <Section title="Profile" content={{ value: profileText }}></Section>
-                            <Section title="Educational Experience"></Section>
-                            <Section title="Practical Experience"></Section>
+                            <Section title="Practical Experience" content={{ value: practicalText }}></Section>
+                            <Section title="Educational Experience" content={{ value: educationText }}></Section>
                         </div>
                     </article>
                 </div>

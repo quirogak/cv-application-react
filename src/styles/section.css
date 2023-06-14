@@ -56,17 +56,12 @@ section {
 }
 
 /* skills section */
-
-.skills .content {
-    height: 45vh;
-}
-
 .skills .content ul {
     padding: 0;
     display: flex;
     gap: 20px;
     margin: 0;
-    margin-top: 10px;
+    margin-top: 5px;
     height: 40vh;
     flex-direction: column;
     justify-content: space-around;
@@ -88,4 +83,58 @@ section {
 
 .skills .content ul figure figcaption li {
     font-weight: normal;
+}
+
+/* education & practical section */
+
+.educational.experience .content ul,
+.practical.experience .content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+.educational.experience .content ul,
+.practical.experience .content ul {
+    color: rgb(87, 87, 87);
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.educational.experience .content ul :nth-child(-n+2),
+.practical.experience .content ul :nth-child(-n+2) {
+    color: rgb(3, 3, 3);
+    font-size: 0.98rem;
+}
+
+.educational.experience .content ul :nth-child(-n+2),
+.practical.experience .content ul :nth-child(-n+2) {
+    color: rgb(3, 3, 3);
+    font-size: 0.98rem;
+}
+
+.educational.experience .content ul .item,
+.practical.experience .content ul .item {
+    display: flex;
+    align-items: flex-end;
+    background-size: 17px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    text-align: left;
+}
+
+.educational.experience .content ul :nth-child(3),
+.practical.experience .content ul :nth-child(3) {
+    background-image: url("../img/address.svg");
+    padding-left: 25px;
+
+}
+
+.educational.experience .content ul :nth-child(4),
+.practical.experience .content ul :nth-child(4) {
+    background-image: url("../img/calendar.svg");
+    padding-left: 25px;
 }
