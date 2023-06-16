@@ -8,6 +8,7 @@ class Section extends Component {
         super(props)
         this.getContent = this.getContent.bind(this)
         this.genEditButton = this.genEditButton.bind(this)
+        this.removeButtons = this.removeButtons.bind(this)
 
         this.state = {
             currentContent: this.props.content //aqui puedo ingresar el contenido que quiero, y también empezar a hacer la lógica para que ese contenido aparezca junto con el botón de Edit.
@@ -41,10 +42,16 @@ class Section extends Component {
         })
     }
 
+    removeButtons() {
+        this.setState({
+            currentContent: this.props.content
+        })
+    }
+
     render() {
         const className = this.props.title.toLowerCase()
         return (
-            <section onMouseEnter={() => this.genEditButton()} className={(className)}>
+            <section onMouseEnter={this.genEditButton} onMouseLeave={this.removeButtons} className={(className)}>
                 <div className="title">{this.props.title} <hr></hr></div>
                 <div className="content">{this.getContent(this.state.currentContent)}</div>
             </section>
