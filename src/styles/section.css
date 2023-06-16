@@ -11,8 +11,20 @@ section {
 }
 
 .content {
-    width: 100%;
+    width: 85%;
     height: 100%;
+}
+
+.skills {
+    height: 70%;
+}
+
+.contact {
+    height: 30%;
+}
+
+.profile {
+    height: 87%;
 }
 
 /*contact section */
@@ -23,7 +35,7 @@ section {
     display: flex;
     flex-direction: column;
     height: 100%;
-    gap: 23px;
+    gap: 15px;
 
 }
 
@@ -56,13 +68,13 @@ section {
 }
 
 /* skills section */
+
 .skills .content ul {
     padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 5px;
     margin: 0;
-    margin-top: 5px;
-    height: 40vh;
+    height: 100%;
     flex-direction: column;
     justify-content: space-around;
 }
@@ -129,12 +141,27 @@ section {
 .educational.experience .content ul :nth-child(3),
 .practical.experience .content ul :nth-child(3) {
     background-image: url("../img/address.svg");
-    padding-left: 25px;
+    padding-left: 20px;
 
 }
 
 .educational.experience .content ul :nth-child(4),
 .practical.experience .content ul :nth-child(4) {
     background-image: url("../img/calendar.svg");
-    padding-left: 25px;
+    padding-left: 20px;
+}
+
+/*name section*/
+
+.your.name {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.your.name .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

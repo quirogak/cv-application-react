@@ -1,0 +1,45 @@
+.editBtn {
+    /*reset most inherited styles*/
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    border: 0;
+    color: #000000;
+    background: #e7ebee;
+    font-size: 1rem;
+    width: 50px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editBtn:hover {
+    transition: all .1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #69b0da;
+}
+
+
+.educational.experience .editBtn,
+.profile .editBtn,
+.practical.experience .editBtn {
+    top: 10%;
+    left: 100%;
+}
+
+.your.name .editBtn {
+    margin-top: 10px;
+    color: black;
+}
+
+.contact .editBtn {
+    bottom: 16%;
+    left: 95%;
+}
+
+.skills .editBtn {
+    bottom: 10%;
+    left: 95%;
+}
