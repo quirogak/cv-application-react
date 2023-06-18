@@ -9,6 +9,9 @@ class Section extends Component {
         this.getContent = this.getContent.bind(this)
         this.genEditButton = this.genEditButton.bind(this)
         this.removeButtons = this.removeButtons.bind(this)
+        this.contentHandler = this.contentHandler.bind(this)
+
+        this.className = this.props.title.toLowerCase()
 
         this.state = {
             currentContent: this.props.content //aqui puedo ingresar el contenido que quiero, y también empezar a hacer la lógica para que ese contenido aparezca junto con el botón de Edit.
@@ -35,8 +38,9 @@ class Section extends Component {
     }
 
     genEditButton() {
-        const content = this.props.content
-        const contentWithButton = [content, <EditBtn></EditBtn>]
+        if (typeof (this.state.currentContent[1]) === "object") return // avoid generating duplicated edit buttons.
+        const content = this.state.currentContent
+        const contentWithButton = [content, <EditBtn sectionContent={[this.className, content.value]} contentHandler={this.contentHandler}></EditBtn>]
         this.setState({
             currentContent: contentWithButton
         })
@@ -48,10 +52,17 @@ class Section extends Component {
         })
     }
 
+    contentHandler(content) {
+        this.setState({
+            currentContent: content
+        })
+    }
+
+    // titleHandler() {}
+
     render() {
-        const className = this.props.title.toLowerCase()
         return (
-            <section onMouseEnter={this.genEditButton} onMouseLeave={this.removeButtons} className={(className)}>
+            <section onMouseEnter={this.genEditButton} onMouseLeave={this.removeButtons} id={this.className} className={this.className}>
                 <div className="title">{this.props.title} <hr></hr></div>
                 <div className="content">{this.getContent(this.state.currentContent)}</div>
             </section>
