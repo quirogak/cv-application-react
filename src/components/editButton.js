@@ -11,10 +11,14 @@ class EditBtn extends Component {
 
     elementsToInput(elements) {
         const toInput = (content) => {
-            if (typeof (content) === "object")
+            if (typeof (content) === "object") // when there is a list inside of a section.
                 return content.map(el => {
-                    return <input key={uniqid()} defaultValue={el}></input>
+                    if (typeof (el) === "object") // when there is a list with sub-lists inside of a section.
+                        return toInput(Object.values(el))
+
+                    return toInput(el) // at this point, the element is a simple value, triggering the conditional below.
                 })
+
             else return <input key={uniqid()} defaultValue={content}></input>
         }
         const titleInput = toInput(elements[0])
