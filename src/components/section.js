@@ -12,12 +12,16 @@ class Section extends Component {
         this.removeButtons = this.removeButtons.bind(this)
         this.contentHandler = this.contentHandler.bind(this)
         this.titleHandler = this.titleHandler.bind(this)
+        this.removeSectionHandlers = this.removeSectionHandlers.bind(this)
+        this.addSectionHandlers = this.addSectionHandlers.bind(this)
 
         this.className = this.props.title.toLowerCase()
 
         this.state = {
-            currentContent: this.props.content, //default value
-            currentTitle: this.props.title
+            currentContent: this.props.content, //default values
+            currentTitle: this.props.title,
+            removeButtons: this.removeButtons,
+            genEditButton: this.genEditButton,
         }
     }
 
@@ -42,10 +46,12 @@ class Section extends Component {
     genEditButton() {
         if (typeof (this.state.currentContent[1]) === "object") return // avoid generating duplicated edit buttons.
         const content = this.state.currentContent
+        console.log(content)
         const contentWithButton = [
             content,
             <EditBtn key={uniqid()} sectionContent={[this.className, content.value]}
-                contentHandler={this.contentHandler} titleHandler={this.titleHandler}>
+                contentHandler={this.contentHandler} titleHandler={this.titleHandler}
+                removeHandlers={this.removeSectionHandlers} addHandlers={this.addSectionHandlers}>
             </EditBtn>
         ]
         this.setState({
@@ -71,9 +77,25 @@ class Section extends Component {
         })
     }
 
+    removeSectionHandlers() {
+        this.setState({
+            genEditButton: null,
+            removeButtons: null
+        })
+
+    }
+
+    addSectionHandlers() {
+        this.setState({
+            genEditButton: this.genEditButton,
+            removeButtons: this.removeButtons
+        })
+    }
+
+
     render() {
         return (
-            <section onMouseEnter={this.genEditButton} onMouseLeave={this.removeButtons} id={this.className} className={this.className}>
+            <section onMouseEnter={this.state.genEditButton} onMouseLeave={this.state.removeButtons} id={this.className} className={this.className}>
                 <div className="title">{this.state.currentTitle} <hr></hr></div>
                 <div className="content">{this.getContent(this.state.currentContent)}</div>
             </section>

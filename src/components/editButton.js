@@ -21,6 +21,7 @@ class EditBtn extends Component {
 
             else return <input key={uniqid()} defaultValue={content}></input>
         }
+        this.props.removeHandlers()
         const titleInput = toInput(elements[0])
         const contentInput = toInput(elements[1])
         this.props.titleHandler(titleInput)
@@ -28,7 +29,10 @@ class EditBtn extends Component {
     }
 
     render() {
-        return <button key={uniqid()} className={[this.parentClass, "editBtn"].join(" ")} onClick={() => this.elementsToInput(this.props.sectionContent)}>Edit</button>
+        return <button key={uniqid()} className={[this.parentClass, "editBtn"].join(" ")}
+            onClick={() => {
+                this.elementsToInput(this.props.sectionContent)
+            }}>Edit</button>
     }
 }
 
