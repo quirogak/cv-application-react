@@ -1,6 +1,7 @@
 import { Component } from "react";
 import "../styles/buttons.css"
 import uniqid from "uniqid"
+import SaveBtn from "./saveButton";
 
 class EditBtn extends Component {
     constructor(props) {
@@ -18,14 +19,13 @@ class EditBtn extends Component {
 
                     return toInput(el) // at this point, the element is a simple value, triggering the conditional below.
                 })
-
             else return <input key={uniqid()} defaultValue={content}></input>
         }
         this.props.removeHandlers()
         const titleInput = toInput(elements[0])
         const contentInput = toInput(elements[1])
         this.props.titleHandler(titleInput)
-        this.props.contentHandler(contentInput)
+        this.props.contentHandler([contentInput, <SaveBtn></SaveBtn>])
     }
 
     render() {
