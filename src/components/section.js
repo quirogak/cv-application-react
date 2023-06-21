@@ -14,6 +14,7 @@ class Section extends Component {
         this.titleHandler = this.titleHandler.bind(this)
         this.removeSectionHandlers = this.removeSectionHandlers.bind(this)
         this.addSectionHandlers = this.addSectionHandlers.bind(this)
+        this.genButton = this.genButton.bind(this)
 
         this.className = this.props.title.toLowerCase()
 
@@ -43,20 +44,25 @@ class Section extends Component {
         else return content
     }
 
-    genEditButton() {
+    genButton(component) {
         if (typeof (this.state.currentContent[1]) === "object") return // avoid generating duplicated edit buttons.
         const content = this.state.currentContent
-        console.log(content)
-        const contentWithButton = [
-            content,
-            <EditBtn key={uniqid()} sectionContent={[this.className, content.value]}
-                contentHandler={this.contentHandler} titleHandler={this.titleHandler}
-                removeHandlers={this.removeSectionHandlers} addHandlers={this.addSectionHandlers}>
-            </EditBtn>
-        ]
+        const contentWithButton = [content, component]
         this.setState({
             currentContent: contentWithButton
         })
+    }
+
+    genEditButton() {
+        return this.genButton(
+            <EditBtn
+                key={uniqid()}
+                sectionContent={[this.className, this.state.currentContent.value]}
+                contentHandler={this.contentHandler}
+                titleHandler={this.titleHandler}
+                removeHandlers={this.removeSectionHandlers}
+                genSaveButton={this.genSaveButton}>
+            </EditBtn>)
     }
 
     removeButtons() {
@@ -82,7 +88,6 @@ class Section extends Component {
             genEditButton: null,
             removeButtons: null
         })
-
     }
 
     addSectionHandlers() {
@@ -91,7 +96,6 @@ class Section extends Component {
             removeButtons: this.removeButtons
         })
     }
-
 
     render() {
         return (
