@@ -47,8 +47,8 @@ const practicalText = [
     "Google",
     "Cambridge 355 Main Street",
     "20XX - Today",
-    "Description about your responsabilities on this job",
-    "Additional Comment"
+    "Description about your responsabilities on this job.",
+    "Additional Comment."
 ]
 
 class Main extends Component {
@@ -60,17 +60,17 @@ class Main extends Component {
             <main>
                 <div id="cv-page">
                     <article id="page-header">
-                        <Section title="Your Name" content={{ value: "your position" }}></Section>
+                        <Section class="your-name" title="Your Name" content={{ value: "your position" }}></Section>
                     </article>
                     <article id="main-info">
                         <div id="left-side">
-                            <Section title="Contact" content={{ value: contactList, }} ></Section>
-                            <Section title="Skills" content={{ value: [softSkills, technicalSkills] }}></Section>
+                            <Section class="contact" title="Contact" content={{ value: contactList, }} ></Section>
+                            <Section class="skills" title="Skills" content={{ value: [softSkills, technicalSkills] }}></Section>
                         </div>
                         <div id="right-side">
-                            <Section title="Profile" content={{ value: profileText }}></Section>
-                            <Section title="Practical Experience" content={{ value: practicalText }}></Section>
-                            <Section title="Educational Experience" content={{ value: educationText }}></Section>
+                            <Section class="profile" title="Profile" content={{ value: profileText }}></Section>
+                            <Section class="practical-experience" title="Practical Experience" content={{ value: practicalText }}></Section>
+                            <Section class="educational-experience" title="Educational Experience" content={{ value: educationText }}></Section>
                         </div>
                     </article>
                 </div>

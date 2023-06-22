@@ -16,7 +16,7 @@ class Section extends Component {
         this.addSectionHandlers = this.addSectionHandlers.bind(this)
         this.genButton = this.genButton.bind(this)
 
-        this.className = this.props.title.toLowerCase()
+        this.className = this.props.class
 
         this.state = {
             currentContent: this.props.content, //default values
@@ -39,9 +39,7 @@ class Section extends Component {
             if (typeof (currentValue) === "object") // when the current value is a list.
                 return <List key={uniqid()} content={currentValue}></List>
             else return currentValue
-
-        //when the content is directly a component.
-        else return content
+        else return content //when the content is directly a component.
     }
 
     genButton(component) {
@@ -99,9 +97,9 @@ class Section extends Component {
 
     render() {
         return (
-            <section onMouseEnter={this.state.genEditButton} onMouseLeave={this.state.removeButtons} id={this.className} className={this.className}>
-                <div className="title">{this.state.currentTitle} <hr></hr></div>
-                <div className="content">{this.getContent(this.state.currentContent)}</div>
+            <section onMouseEnter={this.state.genEditButton} onMouseLeave={this.state.removeButtons} className={this.className}>
+                <div className={"title " + this.className}>{this.state.currentTitle} <hr></hr></div>
+                <div className={"content " + this.className}>{this.getContent(this.state.currentContent)}</div>
             </section>
         )
     }
