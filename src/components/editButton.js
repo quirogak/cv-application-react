@@ -25,7 +25,15 @@ class EditBtn extends Component {
         const titleInput = toInput(elements[0])
         const contentInput = toInput(elements[1])
         this.props.titleHandler(titleInput)
-        this.props.contentHandler([contentInput, <SaveBtn></SaveBtn>])
+        this.props.contentHandler([
+            contentInput,
+            <SaveBtn
+                key={uniqid()}
+                sectionContent={this.props.sectionContent}
+                contentHandler={this.props.contentHandler}
+                titleHandler={this.props.titleHandler}>
+            </SaveBtn>
+        ])
     }
 
     render() {
