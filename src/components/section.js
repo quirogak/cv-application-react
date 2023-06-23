@@ -65,9 +65,10 @@ class Section extends Component {
     }
 
     removeButtons() {
-        this.setState({
-            currentContent: this.state.currentContent[0] // currentContent[0] it's the initial content without the buttons.
-        })
+        if (this.state.currentContent.length > 1) // check if there are buttons.
+            this.setState({
+                currentContent: this.state.currentContent[0] // currentContent[0] it's the initial content without the buttons.
+            })
     }
 
     contentHandler(content) {
