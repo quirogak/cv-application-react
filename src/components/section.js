@@ -59,13 +59,14 @@ class Section extends Component {
                 contentHandler={this.contentHandler}
                 titleHandler={this.titleHandler}
                 removeHandlers={this.removeSectionHandlers}
+                addHandlers={this.addSectionHandlers}
                 genSaveButton={this.genSaveButton}>
             </EditBtn>)
     }
 
     removeButtons() {
         this.setState({
-            currentContent: this.props.content
+            currentContent: this.state.currentContent[0] // currentContent[0] it's the initial content without the buttons.
         })
     }
 
