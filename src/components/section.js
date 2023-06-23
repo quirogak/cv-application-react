@@ -39,6 +39,7 @@ class Section extends Component {
             if (typeof (currentValue) === "object") // when the current value is a list.
                 return <List key={uniqid()} content={currentValue}></List>
             else return currentValue
+
         else return content //when the content is directly a component.
     }
 
@@ -55,7 +56,8 @@ class Section extends Component {
         return this.genButton(
             <EditBtn
                 key={uniqid()}
-                sectionContent={[this.className, this.state.currentContent.value]}
+                sectionContent={[this.state.currentTitle, this.state.currentContent.value]}
+                className={this.className}
                 contentHandler={this.contentHandler}
                 titleHandler={this.titleHandler}
                 removeHandlers={this.removeSectionHandlers}

@@ -31,7 +31,9 @@ class EditBtn extends Component {
                 key={uniqid()}
                 sectionContent={this.props.sectionContent}
                 contentHandler={this.props.contentHandler}
-                titleHandler={this.props.titleHandler}>
+                titleHandler={this.props.titleHandler}
+                addHandlers={this.props.addHandlers}
+                className={this.props.className}>
             </SaveBtn>
         ])
     }
