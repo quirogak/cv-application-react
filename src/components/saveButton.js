@@ -15,17 +15,19 @@ class SaveBtn extends Component {
         const titleParent = document.getElementsByClassName("title " + parentClass)[0]
         const contentParent = document.getElementsByClassName("content " + parentClass)[0]
         const titleChildren = titleParent.childNodes[0].value
-        const contentChildren = []
+        const contentChildren = contentParent.childNodes
 
-        for (let i = 0; i < contentParent.childNodes.length - 1; i++) { // we substract one to avoid the save button itself.
-            const element = contentParent.childNodes[i].value;
-            contentChildren.push(element)
+        if (contentChildren.length > 2) { // when the contentChildren has more than one element (excluding save button).
+            const childrenValues = []
+            for (let i = 0; i < contentParent.childNodes.length - 1; i++) { // we substract one to avoid the save button itself.
+                const element = contentParent.childNodes[i].value;
+                childrenValues.push(element)
+            }
+            return [titleChildren, childrenValues]
         }
-
-        if (contentChildren.length > 1) // when the contentChildren is a list of elements.
-            return [titleChildren, contentChildren]
-
-        return [titleChildren, contentChildren[0]]
+        //when the content is a single element.
+        const childrenValue = contentChildren[0].value
+        return [titleChildren, childrenValue]
     }
 
     inputToElements() {
