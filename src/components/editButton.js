@@ -21,7 +21,11 @@ class EditBtn extends Component {
 
           return toInput(el); // at this point, the element is a simple value, triggering the conditional below.
         });
-      else return <input key={uniqid()} defaultValue={content}></input>;
+      else if (content.length > 100)
+        // when the text is a parragraph.
+        return <textarea key={uniqid()} defaultValue={content}></textarea>;
+
+      return <input key={uniqid()} defaultValue={content}></input>;
     };
     this.props.removeHandlers();
     const titleInput = toInput(elements[0]);
