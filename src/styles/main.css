@@ -1,71 +1,71 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #cv-page {
-    width: 80vh;
-    height: 95%;
-    box-shadow: 0px 0px 15px 5px rgb(197, 197, 197);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 80vh;
+  height: 95%;
+  box-shadow: 0px 0px 15px 5px rgb(197, 197, 197);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #page-header {
-    width: 100%;
-    height: 13%;
-    margin-bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(42, 86, 233);
+  width: 100%;
+  height: 13%;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(42, 86, 233);
 }
 
-#page-header>section>* {
-    font-size: 1.5rem;
-    height: min-content;
-    text-align: center;
+#page-header > section > * {
+  font-size: 1.5rem;
+  height: min-content;
+  text-align: center;
 }
 
-#page-header>section>.content {
-    font-size: 1.1rem;
+#page-header > section > .content {
+  font-size: 1.1rem;
 }
 
-#page-header>section>.title>hr {
-    /*hide hr on title*/
-    border: 0;
-    margin: 0;
+#page-header > section > .title > hr {
+  /*hide hr on title*/
+  border: 0;
+  margin: 0;
 }
 
 #main-info {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 87%;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 87%;
 }
 
 #left-side,
 #right-side {
-    display: flex;
-    flex-direction: column;
-    padding: 2%;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
 }
 
 #left-side {
-    width: 40%;
-    background-color: rgb(48, 48, 48);
-    color: white;
+  width: 40%;
+  background-color: rgb(48, 48, 48);
+  color: white;
 }
 
 #right-side {
-    width: 60%;
-    background-color: rgb(240, 240, 240);
+  width: 60%;
+  background-color: rgb(240, 240, 240);
 }

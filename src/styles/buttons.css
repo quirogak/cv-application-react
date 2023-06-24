@@ -1,32 +1,31 @@
 .editBtn,
 .saveBtn {
-    /*reset most inherited styles*/
-    font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 3px;
-    border: 0;
-    color: #000000;
-    background: #e7ebee;
-    font-size: 1rem;
-    width: 50px;
-    height: 30px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /*reset most inherited styles*/
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  border: 0;
+  color: #000000;
+  background: #e7ebee;
+  font-size: 1rem;
+  width: 50px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .editBtn:hover,
 .saveBtn:hover {
-    transition: all .1s ease;
-    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #69b0da;
+  transition: all 0.1s ease;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #69b0da;
 }
-
 
 .contact .editBtn,
 .skills .editBtn,
 .contact .saveBtn,
 .skills .saveBtn {
-    left: 80%;
+  left: 80%;
 }

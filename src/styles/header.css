@@ -1,11 +1,11 @@
 header {
-    background-color: rgb(221, 221, 221);
-    display: flex;
-    justify-content: center;
+  background-color: rgb(221, 221, 221);
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
-    font-family: 'Courgette', cursive;
-    font-family: 'Roboto Condensed', sans-serif;
-    margin: 7px;
+  font-family: "Courgette", cursive;
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 7px;
 }
