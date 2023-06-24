@@ -1,4 +1,5 @@
-.editBtn {
+.editBtn,
+.saveBtn {
     /*reset most inherited styles*/
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
@@ -16,30 +17,16 @@
     align-items: center;
 }
 
-.editBtn:hover {
+.editBtn:hover,
+.saveBtn:hover {
     transition: all .1s ease;
     box-shadow: 0 0 0 0 #fff, 0 0 0 3px #69b0da;
 }
 
 
-.educational.experience .editBtn,
-.profile .editBtn,
-.practical.experience .editBtn {
-    top: 10%;
-    left: 100%;
-}
-
-.your.name .editBtn {
-    margin-top: 10px;
-    color: black;
-}
-
-.contact .editBtn {
-    bottom: 16%;
-    left: 95%;
-}
-
-.skills .editBtn {
-    bottom: 10%;
-    left: 95%;
+.contact .editBtn,
+.skills .editBtn,
+.contact .saveBtn,
+.skills .saveBtn {
+    left: 80%;
 }

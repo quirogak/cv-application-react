@@ -38,7 +38,7 @@ class SaveBtn extends Component {
     }
 
     render() {
-        return <button id={uniqid()} onClick={this.inputToElements}>Save</button>
+        return <button className="saveBtn" id={uniqid()} onClick={this.inputToElements}>Save</button>
     }
 
 }
