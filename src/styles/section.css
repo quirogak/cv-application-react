@@ -11,25 +11,51 @@ section {
 }
 
 .content {
-    width: 85%;
+    width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .skills {
-    height: 70%;
+    height: 67%;
 }
 
 .contact {
-    height: 30%;
+    height: 33%;
 }
 
 .profile {
     height: 87%;
 }
 
+.practical-experience,
+.educational-experience {
+    height: 88%;
+}
+
+/*profile section */
+.title.profile {
+    height: 20%;
+}
+
+.content.profile {
+    height: 70%;
+}
+
+
 /*contact section */
 
-.contact .content ul {
+.title.contact {
+    height: 20%;
+}
+
+.content.contact {
+    height: 100%;
+}
+
+.content.contact ul {
     margin: 0;
     padding: 0;
     display: flex;
@@ -39,7 +65,7 @@ section {
 
 }
 
-.contact .content ul .item {
+.content.contact ul .item {
     padding-left: 25px;
     display: flex;
     align-items: flex-end;
@@ -69,23 +95,31 @@ section {
 
 /* skills section */
 
-.skills .content ul {
+.title.skills {
+    height: 10%;
+}
+
+.content.skills {
+    height: 100%;
+    display: flex;
+}
+
+.content.skills ul {
     padding: 0;
     display: flex;
-    gap: 5px;
     margin: 0;
-    height: 100%;
+    height: 90%;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.skills .content ul figure {
+.content.skills ul figure {
     margin: 0;
     list-style-position: inside;
     height: 100%;
 }
 
-.skills .content ul figure figcaption {
+.content.skills ul figure figcaption {
     font-weight: bold;
     display: flex;
     flex-direction: column;
@@ -93,22 +127,27 @@ section {
     height: 100%;
 }
 
-.skills .content ul figure figcaption li {
+.content.skills ul figure figcaption li {
     font-weight: normal;
 }
 
 /* education & practical section */
 
-.educational.experience .content ul,
-.practical.experience .content ul {
+.educational-experience .content ul,
+.practical-experience .content ul {
     list-style: none;
     padding: 0;
     margin: 0;
     font-weight: bold;
 }
 
-.educational.experience .content ul,
-.practical.experience .content ul {
+.title.practical-experience,
+.title.educational-experience {
+    height: 20%;
+}
+
+.educational-experience .content ul,
+.practical-experience .content ul {
     color: rgb(87, 87, 87);
     font-size: 0.9rem;
     display: flex;
@@ -116,20 +155,20 @@ section {
     gap: 5px;
 }
 
-.educational.experience .content ul :nth-child(-n+2),
-.practical.experience .content ul :nth-child(-n+2) {
+.educational-experience .content ul :nth-child(-n+2),
+.practical-experience .content ul :nth-child(-n+2) {
     color: rgb(3, 3, 3);
     font-size: 0.98rem;
 }
 
-.educational.experience .content ul :nth-child(-n+2),
-.practical.experience .content ul :nth-child(-n+2) {
+.educational-experience .content ul :nth-child(-n+2),
+.practical-experience .content ul :nth-child(-n+2) {
     color: rgb(3, 3, 3);
     font-size: 0.98rem;
 }
 
-.educational.experience .content ul .item,
-.practical.experience .content ul .item {
+.educational-experience .content ul .item,
+.practical-experience .content ul .item {
     display: flex;
     align-items: flex-end;
     background-size: 17px;
@@ -138,29 +177,29 @@ section {
     text-align: left;
 }
 
-.educational.experience .content ul :nth-child(3),
-.practical.experience .content ul :nth-child(3) {
+.educational-experience .content ul :nth-child(3),
+.practical-experience .content ul :nth-child(3) {
     background-image: url("../img/address.svg");
     padding-left: 20px;
 
 }
 
-.educational.experience .content ul :nth-child(4),
-.practical.experience .content ul :nth-child(4) {
+.educational-experience .content ul :nth-child(4),
+.practical-experience .content ul :nth-child(4) {
     background-image: url("../img/calendar.svg");
     padding-left: 20px;
 }
 
 /*name section*/
 
-.your.name {
+.your-name {
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.your.name .content {
+.your-name .content {
     display: flex;
     align-items: center;
     flex-direction: column;
