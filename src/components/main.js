@@ -1,4 +1,3 @@
-import { Component } from "react";
 import Section from "./section";
 import "../styles/main.css";
 
@@ -44,53 +43,51 @@ const practicalText = [
   "Additional Comment.",
 ];
 
-class Main extends Component {
-  render() {
-    return (
-      <main>
-        <div id="cv-page">
-          <article id="page-header">
+const Main = () => {
+  return (
+    <main>
+      <div id="cv-page">
+        <article id="page-header">
+          <Section
+            class="your-name"
+            title="Your Name"
+            content={{ value: "your position" }}
+          ></Section>
+        </article>
+        <article id="main-info">
+          <div id="left-side">
             <Section
-              class="your-name"
-              title="Your Name"
-              content={{ value: "your position" }}
+              class="contact"
+              title="Contact"
+              content={{ value: contactList }}
             ></Section>
-          </article>
-          <article id="main-info">
-            <div id="left-side">
-              <Section
-                class="contact"
-                title="Contact"
-                content={{ value: contactList }}
-              ></Section>
-              <Section
-                class="skills"
-                title="Skills"
-                content={{ value: [softSkills, technicalSkills] }}
-              ></Section>
-            </div>
-            <div id="right-side">
-              <Section
-                class="profile"
-                title="Profile"
-                content={{ value: profileText }}
-              ></Section>
-              <Section
-                class="practical-experience"
-                title="Practical Experience"
-                content={{ value: practicalText }}
-              ></Section>
-              <Section
-                class="educational-experience"
-                title="Educational Experience"
-                content={{ value: educationText }}
-              ></Section>
-            </div>
-          </article>
-        </div>
-      </main>
-    );
-  }
+            <Section
+              class="skills"
+              title="Skills"
+              content={{ value: [softSkills, technicalSkills] }}
+            ></Section>
+          </div>
+          <div id="right-side">
+            <Section
+              class="profile"
+              title="Profile"
+              content={{ value: profileText }}
+            ></Section>
+            <Section
+              class="practical-experience"
+              title="Practical Experience"
+              content={{ value: practicalText }}
+            ></Section>
+            <Section
+              class="educational-experience"
+              title="Educational Experience"
+              content={{ value: educationText }}
+            ></Section>
+          </div>
+        </article>
+      </div>
+    </main>
+  );
 }
 
 export default Main;

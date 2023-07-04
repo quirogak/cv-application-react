@@ -1,16 +1,9 @@
-import { Component } from "react";
 import uniqid from "uniqid";
 
-class List extends Component {
-  constructor(props) {
-    super(props);
-    this.renderList = this.renderList.bind(this);
-  }
-
-  renderList(listArr) {
+const List = (props) => {
+  const renderList = (listArr) => {
+    // if the given list contains sub-lists
     if (typeof listArr[0] === "object")
-      // if the given list contains sub-lists
-
       return listArr.map(
         (
           el //render the title and render the given list recursively.
@@ -18,7 +11,7 @@ class List extends Component {
           <figure key={uniqid()}>
             <figcaption>
               {el.title}
-              {this.renderList(el.content)}
+              {renderList(el.content)}
             </figcaption>
           </figure>
         )
@@ -30,9 +23,7 @@ class List extends Component {
       </li>
     ));
   }
-  render() {
-    return <ul>{this.renderList(this.props.content)}</ul>;
-  }
+  return <ul>{renderList(props.content)}</ul>;
 }
 
 export default List;

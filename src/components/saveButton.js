@@ -1,16 +1,8 @@
-import { Component } from "react";
 import uniqid from "uniqid";
 
-class SaveBtn extends Component {
-  constructor(props) {
-    super(props);
+const SaveBtn = (props) => {
 
-    this.getInputValues = this.getInputValues.bind(this);
-    this.inputToElements = this.inputToElements.bind(this);
-    this.parentClass = this.props.className;
-  }
-
-  getInputValues(parentClass) {
+  const getInputValues = (parentClass) => {
     const titleParent = document.getElementsByClassName(
       "title " + parentClass
     )[0];
@@ -35,20 +27,16 @@ class SaveBtn extends Component {
     return [titleChildren, childrenValue];
   }
 
-  inputToElements() {
-    const inputValues = this.getInputValues(this.parentClass);
-    this.props.titleHandler(inputValues[0]);
-    this.props.contentHandler({ value: inputValues[1] });
-    this.props.addHandlers(); // return original section mouseEvent handlers.
+  const inputToElements = () => {
+    const inputValues = getInputValues(props.className);
+    props.contentHandler({ value: inputValues[1] })
+    props.titleHandler(inputValues[0])
+    props.eventHandlers(true);
   }
-
-  render() {
-    return (
-      <button className="saveBtn" id={uniqid()} onClick={this.inputToElements}>
-        Save
-      </button>
-    );
-  }
+  return (
+    <button className="saveBtn" id={uniqid()} onClick={inputToElements}>
+      Save
+    </button>
+  );
 }
-
 export default SaveBtn;
